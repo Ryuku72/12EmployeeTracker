@@ -1,0 +1,24 @@
+{
+  "name": "HomeworkW12",
+  "version": "1.0.0",
+  "description": "MySQL Employee Tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryuku72/HomeworkW12.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ryuku72/HomeworkW12/issues"
+  },
+  "homepage": "https://github.com/Ryuku72/HomeworkW12#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
