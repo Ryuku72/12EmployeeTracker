@@ -1,42 +1,44 @@
-INSERT INTO department (name) VALUES ("Marketing");
-INSERT INTO department (name) VALUES ("Legal");
-INSERT INTO department (name) VALUES ("Research and Development");
-INSERT INTO department (name) VALUES ("Information Technology");
-INSERT INTO department (name) VALUES ("Enquiries");
-INSERT INTO department (name) VALUES ("Security");
+-- Database of Departments, Roles and Employees --
+INSERT INTO department (sector) VALUES ("CEO");
+INSERT INTO department (sector) VALUES ("Marketing");
+INSERT INTO department (sector) VALUES ("Legal");
+INSERT INTO department (sector) VALUES ("Research and Development");
+INSERT INTO department (sector) VALUES ("Information Technology");
+INSERT INTO department (sector) VALUES ("Enquiries");
+INSERT INTO department (sector) VALUES ("Security");
 
-INSERT INTO role (title, salary) VALUES ("CEO", 520000.00);
-INSERT INTO role (title, salary) VALUES ("Marketing Manager", 165000.50);
-INSERT INTO role (title, salary) VALUES ("Sales", 122322.00);
-INSERT INTO role (title, salary) VALUES ("Public Relations", 118009.28);
-INSERT INTO role (title, salary) VALUES ("Graphic Design", 92000);
-INSERT INTO role (title, salary) VALUES ("Analyst", 102890.19);
-INSERT INTO role (title, salary) VALUES ("Law Office Manager", 135000.50);
-INSERT INTO role (title, salary) VALUES ("Consultant", 102105.00);
-INSERT INTO role (title, salary) VALUES ("Accounting", 100371.93);
-INSERT INTO role (title, salary) VALUES ("Corperate Lawyer", 120220.99);
-INSERT INTO role (title, salary) VALUES ("Paralegal", 108013.50);
-INSERT INTO role (title, salary) VALUES ("Research Manager", 205000.50);
-INSERT INTO role (title, salary) VALUES ("Robotics Engineer", 322070.35);
-INSERT INTO role (title, salary) VALUES ("Mechanical Engineer", 272108.33);
-INSERT INTO role (title, salary) VALUES ("Physicist", 302040.22);
-INSERT INTO role (title, salary) VALUES ("Electronics Engineer", 199222.22);
-INSERT INTO role (title, salary) VALUES ("IT Manager", 105000.50);
-INSERT INTO role (title, salary) VALUES ("Software Engineer", 87000.20);
-INSERT INTO role (title, salary) VALUES ("Network Engineer", 92021.87);
-INSERT INTO role (title, salary) VALUES ("Adminstration", 102001.01);
-INSERT INTO role (title, salary) VALUES ("Network Architect", 87333.19);
-INSERT INTO role (title, salary) VALUES ("CC Manager", 165000.50);
-INSERT INTO role (title, salary) VALUES ("Feedback administration", 51081.22);
-INSERT INTO role (title, salary) VALUES ("Systems specialist", 42992.17);
-INSERT INTO role (title, salary) VALUES ("Customer Service Representive", 39988.78);
-INSERT INTO role (title, salary) VALUES ("Security Manager", 75200.50);
-INSERT INTO role (title, salary) VALUES ("Security Officer", 64118.21);
-INSERT INTO role (title, salary) VALUES ("Surveillance", 58128.92);
-INSERT INTO role (title, salary) VALUES ("Security Guard", 62118.21);
-INSERT INTO role (title, salary) VALUES ("Unknown", 420871.22);
+INSERT INTO role (title, salary, departmentID) VALUES ("Director", 520000.00, 1);
+INSERT INTO role (title, salary, departmentID) VALUES ("Marketing Manager", 165000.50, 2);
+INSERT INTO role (title, salary, departmentID) VALUES ("Sales", 122322.00, 2);
+INSERT INTO role (title, salary, departmentID) VALUES ("Public Relations", 118009.28, 2);
+INSERT INTO role (title, salary, departmentID) VALUES ("Graphic Design", 92000, 2);
+INSERT INTO role (title, salary, departmentID) VALUES ("Analyst", 102890.19, 2);
+INSERT INTO role (title, salary, departmentID) VALUES ("Law Office Manager", 135000.50, 3);
+INSERT INTO role (title, salary, departmentID) VALUES ("Consultant", 102105.00, 3);
+INSERT INTO role (title, salary, departmentID) VALUES ("Accounting", 100371.93, 3);
+INSERT INTO role (title, salary, departmentID) VALUES ("Corperate Lawyer", 120220.99, 3);
+INSERT INTO role (title, salary, departmentID) VALUES ("Paralegal", 108013.50, 3);
+INSERT INTO role (title, salary, departmentID) VALUES ("Research Manager", 205000.50, 4);
+INSERT INTO role (title, salary, departmentID) VALUES ("Robotics Engineer", 322070.35, 4);
+INSERT INTO role (title, salary, departmentID) VALUES ("Mechanical Engineer", 272108.33, 4);
+INSERT INTO role (title, salary, departmentID) VALUES ("Physicist", 302040.22, 4);
+INSERT INTO role (title, salary, departmentID) VALUES ("Electronics Engineer", 199222.22, 4);
+INSERT INTO role (title, salary, departmentID) VALUES ("IT Manager", 105000.50, 5);
+INSERT INTO role (title, salary, departmentID) VALUES ("Software Engineer", 87000.20, 5);
+INSERT INTO role (title, salary, departmentID) VALUES ("Network Engineer", 92021.87, 5);
+INSERT INTO role (title, salary, departmentID) VALUES ("Adminstration", 102001.01, 5);
+INSERT INTO role (title, salary, departmentID) VALUES ("Network Architect", 87333.19, 5);
+INSERT INTO role (title, salary, departmentID) VALUES ("CC Manager", 165000.50, 6);
+INSERT INTO role (title, salary, departmentID) VALUES ("Feedback administration", 51081.22, 6);
+INSERT INTO role (title, salary, departmentID) VALUES ("Systems specialist", 42992.17, 6);
+INSERT INTO role (title, salary, departmentID) VALUES ("Customer Service Representive", 39988.78, 6);
+INSERT INTO role (title, salary, departmentID) VALUES ("Security Manager", 75200.50, 7);
+INSERT INTO role (title, salary, departmentID) VALUES ("Security Officer", 64118.21, 7);
+INSERT INTO role (title, salary, departmentID) VALUES ("Surveillance", 58128.92, 7);
+INSERT INTO role (title, salary, departmentID) VALUES ("Security Guard", 62118.21, 7);
+INSERT INTO role (title, salary, departmentID) VALUES ("Unknown", 420871.22, 1);
 
-INSERT INTO employee (firstName, lastName, roleID, managerID) VALUES ("Joshua K", "Bader", 1, null);
+INSERT INTO employee (firstName, lastName, roleID, managerID) VALUES ("Joshua K", "Bader", 1, 1);
 
 INSERT INTO employee (firstName, lastName, roleID, managerID) VALUES ("Jarrad", "Vennett", 2, 1);
 INSERT INTO employee (firstName, lastName, roleID, managerID) VALUES ("Michael", "Burry", 5, 2);
@@ -91,9 +93,4 @@ INSERT INTO employee (firstName, lastName, roleID, managerID) VALUES ("Clint", "
 INSERT INTO employee (firstName, lastName, roleID, managerID) VALUES ("Phil", "Coulson", 28, 26);
 INSERT INTO employee (firstName, lastName, roleID, managerID) VALUES ("Maria", "Hill", 28, 26);
 
-
 INSERT INTO employee (firstName, lastName, roleID, managerID) VALUES ("Kokomi", "Bader", 30, 1); 
-
-
-
-

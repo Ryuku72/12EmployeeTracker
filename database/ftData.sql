@@ -1,3 +1,5 @@
+-- Tables for FTseed --
+
 DROP DATABASE IF EXISTS foreign_toolboxDB;
 
 create database foreign_toolboxDB;
@@ -6,7 +8,7 @@ use foreign_toolboxDB;
 
 create table department (
 id INT NOT NULL AUTO_INCREMENT,
-name VARCHAR(30),
+sector VARCHAR(30),
 PRIMARY KEY (id)
 );
 
