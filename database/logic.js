@@ -1,7 +1,19 @@
+// reference folders
+const connection = require("./connection");
+const header = require("./header")
+
+// npm applications
+const CLI = require('clui');
+const Spinner = CLI.Spinner;
+const figlet = require("figlet");
+const clear = require("clear");
+const chalk = require("chalk");
+const inquirer = require("inquirer");
+
+
 const logicDB = {
 
-    //View 
-
+  //View 
     getDepartmentNames : async function (connection, callback) {
         let departments = [];
         const question = "SELECT * FROM department ORDER BY sector";
@@ -73,10 +85,10 @@ const logicDB = {
    
     // View by ID
      
-    getDepartmentID : async function (connection, callback) {
+    getDepartmentID : async function (result, callback) {
         let departmentID = [];
-        const question = "SELECT * FROM department WHERE id = ?";
-        const input = [2];
+        const question = "SELECT id FROM department WHERE sector = ?";
+        const input = [result];
         const answer = function (err, res) {
           if (err) {
             throw err;
@@ -147,19 +159,16 @@ const logicDB = {
         const inputDB = [1];
         const question = "SELECT firstName, lastName, department.sector FROM ((employee INNER JOIN role on roleID = role.id) Inner JOIN department ON departmentID = department.id) WHERE department.id = ?";
         const answer = function (err, res) {
-          if (err) {
-            throw err;
-          }
+          if (err) throw err;
           if (res) {
             for (let i = 0; i < res.length; i++) {
               employeeByDepartment.push(res[i].firstName + " " + res[i].lastName);
             }
           }
-          callback(null, employeeByDepartment)
+          callback(null, employeeByDepartment);
         }
         await connection.query(question, inputDB, answer)
       },
-      
       
     getRoleByDepartment : async function (connection, callback) {
         let roleByDepartment = [];
@@ -183,25 +192,44 @@ const logicDB = {
     // add
       
 
-addByDepartment : async function(connection,) {
-        const question = "INSERT INTO department SET ?";
-        const inputDB = {sector: "Special Department"};
+addByDepartment : async function(connection, res) {
+        const question = "INSERT INTO department (sector) VALUES (?)";
+        const inputDB = [res.departmentName];
         const answer = function (err, res) {
           if (err) throw err;
-          if (res) console.log("Department " + inputDB.sector + " added");       
+          if (res) console.log("Department " + inputDB + " added");       
           }
         connection.query(question, inputDB, answer)
       },
       
-addByRole : async function(connection, ){
-        const question = "INSERT INTO role SET ?";
-        const inputDB = {title: "Art Student", salary: 42000.00, departmentID: 2};
-        const answer = function (err, res) {
-          if (err) throw err; 
-          if (res) console.log("role " + inputDB.title + " added");     
+addbyRole : async function (connection, result) {
+  const getRole = "Select * FROM role";
+    const getDepartment = "SELECT * FROM department;";
+        connection.query(getRole, function (err, roles) {
+        connection.query(getDepartment, function (err, departments) {
+
+            if (err) throw err;
+
+            for(var i = 0; i < departments.length; i++) {
+              if (departments[i].sector === result.roleDepartmentID) {
+                  result.departmentID = departments[i].id; // changes result.departmentID into a number matching the department.
+              }
           }
-          connection.query(question, inputDB, answer)
-      },
+          var question = "INSERT INTO role SET ?"
+          const inputDB = {
+           title: result.roleName,
+           salary: result.roleSalary,
+           departmentID: result.departmentID
+          }
+          connection.query(question, inputDB, function (err){
+              if (err) throw err;
+       
+              console.table("Role " + chalk.bold.green(inputDB.title) + " Successfully added")
+          })
+       })
+  })
+
+},
       
 addByEmployee : async function(connection, ) {
         const question = "INSERT INTO employee SET ?";

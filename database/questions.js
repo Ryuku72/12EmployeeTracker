@@ -1,61 +1,24 @@
 
-const questions = [  
-    {
-        type: "list",
-        name: "start",
-        message: "What would you like today?",
-        choices: ["View", "Add", "Delete", "Edit", "Budget", "EXIT", "Reset"],
-        default: "View"
-    },
-
-    // view
-
-    {
-        when: (answers) => answers.start === "View",
-        type: "list",
-        name: "view",
-        message: "Which area would you like to view",
-        choices: ["Departments", "Roles", "Employees", "Managers", "EXIT"],
-        default: "Departments"
-    },
-    {
-        when: (answers) => answers.start === "Add",
-        type: "list",
-        name: "add",
-        message: "Which area would you like to add",
-        choices: ["Departments", "Roles", "Employees", "Managers", "EXIT"],
-        default: "Departments"
-    },
-    {
-        when: (answers) => answers.start === "Delete",
-        type: "list",
-        name: "delete",
-        message: "Which area would you like to delete",
-        choices: ["Departments", "Roles", "Employees", "Managers", "EXIT"],
-        default: "Departments"
-    },
-    {
-        when: (answers) => answers.start === "Edit",
-        type: "list",
-        name: "view",
-        message: "Which area would you like to Edit",
-        choices: ["Employee's Role", "Department Manager", "EXIT"],
-        default: "Employee's Role"
-    },
-    {
-        when: (answers) => answers.start === "Budget",
-        type: "list",
-        name: "budget",
-        message: "Which department budget would you like to see?",
-        choices: ["Department function", "EXIT"],
-    },
-    {
-        when: (answers) => answers.start === "Reset",
-        type: "list",
-        name: "reset",
-        message: "Are you sure you want to reset the entire Database?",
-        choices: ["YES", "NO"],
-    },
-]
+const questions = [ { 
+    type: "list",
+    pageSize: 13,
+    message: "What would you like to do?",
+    name: "action",
+    choices: [
+      "View all DEPARTMENTS",
+      "View all ROLES",
+      "View all EMPLOYEES",
+      "View all MANAGERS",
+      "Add DEPARTMENT",
+      "Add ROLE",
+      "Add EMPLOYEE",
+      "Remove DEPARTMENT",
+      "Remove ROLE",
+      "Remove EMPLOYEE",
+      "Update DEPARTMENT ROLE",
+      "View Budget",
+      "EXIT",
+    ]
+}]
 
 module.exports = questions;
