@@ -1,5 +1,3 @@
--- Tables for FTseed --
-
 DROP DATABASE IF EXISTS foreign_toolboxDB;
 
 create database foreign_toolboxDB;

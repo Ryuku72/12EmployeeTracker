@@ -15,7 +15,7 @@ INSERT INTO role (title, salary, departmentID) VALUES ("Graphic Design", 92000, 
 INSERT INTO role (title, salary, departmentID) VALUES ("Analyst", 102890.19, 2);
 INSERT INTO role (title, salary, departmentID) VALUES ("Law Office Manager", 135000.50, 3);
 INSERT INTO role (title, salary, departmentID) VALUES ("Consultant", 102105.00, 3);
-INSERT INTO role (title, salary, departmentID) VALUES ("Accounting", 100371.93, 3);
+INSERT INTO role (title, salary, departmentID) VALUES ("Accountant", 100371.93, 3);
 INSERT INTO role (title, salary, departmentID) VALUES ("Corperate Lawyer", 120220.99, 3);
 INSERT INTO role (title, salary, departmentID) VALUES ("Paralegal", 108013.50, 3);
 INSERT INTO role (title, salary, departmentID) VALUES ("Research Manager", 205000.50, 4);

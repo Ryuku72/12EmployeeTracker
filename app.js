@@ -4,16 +4,16 @@ const connection = require("./database/connection");
 const questions = require("./database/questions");
 const logic = require("./database/logic");
 const header = require("./database/header")
+const foreignQ = require("./mySQL/ftReset")
 
 // npm applications
 
 const CLI = require('clui');
 const Spinner = CLI.Spinner;
-const figlet = require("figlet");
 const clear = require("clear");
 const chalk = require("chalk");
 const inquirer = require("inquirer");
-const cTable = require('console.table');
+
 
 
 //mySQL connection
@@ -160,8 +160,13 @@ async function main() {
     break;
   }
 
-  case "View Budget": {
+  case "View BUDGET": {
     viewBudget();
+    break;
+  }
+
+  case "Reset DATABASE": {
+    resetRequest();
     break;
   }
 
@@ -179,11 +184,12 @@ const addDepartment = async function () {
       type: "input",
       message: "What is the name of the new department?",
       name: "departmentName",
-      validate: validName = function (name) {
-        if (name === '') {
-          return "Blank is not a name. Please try again";
+      validate: function (name) {
+        const reg = /^\d+$/;
+        if (name === '' || reg.test(name)) {
+          return "Please enter CORRECT answer. BLANK and NUMBERS are not correct answers";
         }
-        return true;
+        return true
       }
     }]).then(function (result) {
 
@@ -219,26 +225,24 @@ const addRole = async function () {
             name: "roleName",
             type: "input",
             message: "What is the title of the new role?",
-            validate: validName = function (name) {
-              if (name === '') {
-                return "Blank is not a name. Please try again";
+            validate: function (name) {
+              const reg = /^\d+$/;
+              if (name === '' || reg.test(name)) {
+                return "Please enter CORRECT answer. BLANK and NUMBERS are not correct answers";
               }
-              return true;
+              return true
             }
           },
           {
             name: "roleSalary",
             type: "input",
             message: "What is the salary of the new role? (Maximum 8 figures",
-            validate: function (value) {
-              const valid = !isNaN(parseInt(value));
-              return valid || "Please enter a number";
-            },
-            validate: function (id) {
-              if (id.length < 7) {
-                return true
+            validate: function (name) {
+              const reg = /^\d+$/;
+              if ((name.length) > 7 || reg.test(!name)) {
+                return "Please enter CORRECT answer. BLANK and LETTERS are not correct answers";
               }
-              return "Max figure has to be equal or less than 8 characters"
+              return true
             }
           },
           {
@@ -299,28 +303,30 @@ const addEmployee = async function () {
       connection.query(getDepartment, function (err, departments) {
         if (err) throw err;
         else clear();
-              header.startScreen();
+        header.startScreen();
         return inquirer
           .prompt([{
               type: "input",
               name: "firstName",
               message: "What is the employee's first name?",
-              validate: validName = function (name) {
-                if (name === '') {
-                  return "Blank is not a name. Please try again";
+              validate: function (name) {
+                const reg = /^\d+$/;
+                if (name === '' || reg.test(name)) {
+                  return "Please enter CORRECT answer. BLANK and NUMBERS are not correct answers";
                 }
-                return true;
+                return true
               }
             },
             {
               type: "input",
               name: "lastName",
               message: "What is the employee's last name?",
-              validate: validName = function (name) {
-                if (name === '') {
-                  return "Blank is not a name. Please try again";
+              validate: function (name) {
+                const reg = /^\d+$/;
+                if (name === '' || reg.test(name)) {
+                  return "Please enter CORRECT answer. BLANK and NUMBERS are not correct answers";
                 }
-                return true;
+                return true
               }
             },
             {
@@ -458,7 +464,7 @@ const removeDepartment = async function () {
   connection.query(getDepartment, function (err, departments) {
     if (err) throw err;
     else clear();
-          header.startScreen();
+    header.startScreen();
     inquirer.prompt(
         [{
           type: "list",
@@ -508,7 +514,7 @@ const removeRole = async function () {
   connection.query(getRoles, function (err, roles) {
     if (err) throw err;
     else clear();
-          header.startScreen();
+    header.startScreen();
     inquirer.prompt(
         [{
           type: "list",
@@ -560,7 +566,7 @@ const removeEmployee = async function () {
   connection.query(getEmployee, function (err, employees) {
     if (err) throw err;
     else clear();
-          header.startScreen();
+    header.startScreen();
     inquirer.prompt(
         [{
           type: "list",
@@ -616,7 +622,7 @@ function updateRole() {
     connection.query(getDepartment, function (err, departments) {
       if (err) throw err;
       else clear();
-          header.startScreen();
+      header.startScreen();
       inquirer.prompt([
 
         {
@@ -637,11 +643,12 @@ function updateRole() {
           name: "newSalary",
           type: "input",
           message: "What is the new salary for this role? Max. 8 figures",
-          validate: function (id) {
-            if (id.length < 7) {
-              return true
+          validate: function (name) {
+            const reg = /^\d+$/;
+            if ((name.length) > 7 || reg.test(name)) {
+              return "Please enter CORRECT answer. BLANK and NUMBERS are not correct answers";
             }
-            return "Max figure has to be equal or less than 8 characters"
+            return true
           }
         },
         {
@@ -688,47 +695,71 @@ function updateRole() {
 
 
 const viewBudget = async function () {
-      const getDepartment = "SELECT * FROM department";
-      connection.query(getDepartment, function (err, departments) {
-            if (err) throw err;
-            else clear();
-          header.startScreen();
-            inquirer.prompt([{
-              name: "choiceDept",
-              pageSize: 15,
-              type: "list",
-              choices: function () {
-                var departmentNames = [];
-                for (var i = 0; i < departments.length; i++) {
-                  departmentNames.push(departments[i].sector);
-                }
-
-                return departmentNames;
-              },
-              message: "Which Department budget would you like to see?"
-            }, ]).then(function (result) {
-
-              for (var i = 0; i < departments.length; i++) {
-                if (departments[i].sector == result.choiceDept) {
-                  departmentID = departments[i].id;
-                }
-              }
-              let answerTotal =[]
-              const question = "Select sum(salary) as total FROM role WHERE departmentID = ?" 
-              const inputDB = departmentID;
-              connection.query(question, inputDB, function (err, response,) {
-                if (err) throw err;
-                else 
-                total = response
-                for (var i = 0; i < total.length; i++) {
-                answerTotal.push(total[i].total)
-                }
-                console.log(chalk.bold.red("* * ") + "Department: " + chalk.bold.yellow(result.choiceDept) + " total budget is " +
-                chalk.bold.green("$" + JSON.parse(answerTotal)) + chalk.bold.red(" * * \n"))
-                startQ()
-              });
-            })
-          })
+  const getDepartment = "SELECT * FROM department";
+  connection.query(getDepartment, function (err, departments) {
+    if (err) throw err;
+    else clear();
+    header.startScreen();
+    inquirer.prompt([{
+      name: "choiceDept",
+      pageSize: 15,
+      type: "list",
+      choices: function () {
+        var departmentNames = [];
+        for (var i = 0; i < departments.length; i++) {
+          departmentNames.push(departments[i].sector);
         }
 
-          main();
+        return departmentNames;
+      },
+      message: "Which Department budget would you like to see?"
+    }, ]).then(function (result) {
+
+      for (var i = 0; i < departments.length; i++) {
+        if (departments[i].sector == result.choiceDept) {
+          departmentID = departments[i].id;
+        }
+      }
+      let answerTotal = []
+      const question = "Select sum(salary) as total FROM role WHERE departmentID = ?"
+      const inputDB = departmentID;
+      connection.query(question, inputDB, function (err, response, ) {
+        if (err) throw err;
+        else
+          total = response
+        for (var i = 0; i < total.length; i++) {
+          answerTotal.push(total[i].total)
+        }
+        console.log(chalk.bold.red("* * ") + "Department: " + chalk.bold.yellow(result.choiceDept) + " total budget is " +
+          chalk.bold.green("$" + JSON.parse(answerTotal)) + chalk.bold.red(" * * \n"))
+        startQ()
+      });
+    })
+  })
+}
+
+// RESET DATABASE FUNCTION
+
+const resetRequest = async function () {
+  clear();
+    header.startScreen();
+      inquirer.prompt([{
+        name: "reset",
+        type: "list",
+        message: "WARNING!!! WARNING!!! WARNING!!!\nAre you sure you want to reset the database?\nThis will wipe the mySQL database back to the original state!!!\n\nIf this is the first time using EMPLOYMENT TRACKER API then 'YES' option will populate your database for you\n",
+        default: "NO",
+        choices: ["YES", "NO"]
+
+      }]).then(data => {
+        if (data.reset == "NO") {  
+          clear()
+          header.startScreen()
+          main()
+        }
+        if (data.reset == "YES") {
+          foreignQ.resetServer()
+        }
+      })
+    }
+
+      main();

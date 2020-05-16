@@ -263,8 +263,7 @@ removeByRole : async function(connection, ) {
           }
           connection.query(question, inputDB, answer)
       },
-  
-      
+        
 removeByEmployee : async function(connection, ) {
         const question = "DELETE from employee WHERE firstName = ? AND lastName = ?";
         const inputDB = ["Aki", "Bader"];
@@ -274,7 +273,7 @@ removeByEmployee : async function(connection, ) {
           }
           connection.query(question, inputDB, answer)
       },
-      
+    
 }
 
 module.exports = logicDB;

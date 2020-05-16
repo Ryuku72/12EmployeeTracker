@@ -16,7 +16,8 @@ const questions = [ {
       "Remove ROLE",
       "Remove EMPLOYEE",
       "Update DEPARTMENT ROLE",
-      "View Budget",
+      "View BUDGET",
+      "Reset DATABASE",
       "EXIT",
     ]
 }]
