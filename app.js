@@ -172,6 +172,8 @@ async function main() {
 // add functions
 
 const addDepartment = async function () {
+  clear();
+  header.startScreen();
   inquirer.prompt(
     [{
       type: "input",
@@ -295,6 +297,9 @@ const addEmployee = async function () {
   connection.query(getEmployee, function (err, employees) {
     connection.query(getRole, function (err, roles) {
       connection.query(getDepartment, function (err, departments) {
+        if (err) throw err;
+        else clear();
+              header.startScreen();
         return inquirer
           .prompt([{
               type: "input",
@@ -451,6 +456,9 @@ const addEmployee = async function () {
 const removeDepartment = async function () {
   const getDepartment = "SELECT * FROM department;";
   connection.query(getDepartment, function (err, departments) {
+    if (err) throw err;
+    else clear();
+          header.startScreen();
     inquirer.prompt(
         [{
           type: "list",
@@ -498,6 +506,9 @@ const removeDepartment = async function () {
 const removeRole = async function () {
   const getRoles = "SELECT * FROM role;";
   connection.query(getRoles, function (err, roles) {
+    if (err) throw err;
+    else clear();
+          header.startScreen();
     inquirer.prompt(
         [{
           type: "list",
@@ -547,6 +558,9 @@ const removeRole = async function () {
 const removeEmployee = async function () {
   const getEmployee = "SELECT * FROM employee;";
   connection.query(getEmployee, function (err, employees) {
+    if (err) throw err;
+    else clear();
+          header.startScreen();
     inquirer.prompt(
         [{
           type: "list",
@@ -598,12 +612,11 @@ const removeEmployee = async function () {
 function updateRole() {
   var getRole = "SELECT * FROM role;";
   var getDepartment = "SELECT * FROM department;";
-
-
   connection.query(getRole, function (err, roles) {
     connection.query(getDepartment, function (err, departments) {
-
       if (err) throw err;
+      else clear();
+          header.startScreen();
       inquirer.prompt([
 
         {
@@ -678,6 +691,8 @@ const viewBudget = async function () {
       const getDepartment = "SELECT * FROM department";
       connection.query(getDepartment, function (err, departments) {
             if (err) throw err;
+            else clear();
+          header.startScreen();
             inquirer.prompt([{
               name: "choiceDept",
               pageSize: 15,
@@ -698,14 +713,18 @@ const viewBudget = async function () {
                   departmentID = departments[i].id;
                 }
               }
-         
-              const question = "Select sum(salary) FROM role WHERE departmentID = ?" 
+              let answerTotal =[]
+              const question = "Select sum(salary) as total FROM role WHERE departmentID = ?" 
               const inputDB = departmentID;
-              connection.query(question, inputDB, function (err, response) {
+              connection.query(question, inputDB, function (err, response,) {
                 if (err) throw err;
                 else 
-                console.log(chalk.bold.red("* * ") + "Department: " + chalk.bold.yellow(result.choiceDept) + " total budget is ");
-                console.log(response) + console.log(chalk.bold.red(" * * \n"))
+                total = response
+                for (var i = 0; i < total.length; i++) {
+                answerTotal.push(total[i].total)
+                }
+                console.log(chalk.bold.red("* * ") + "Department: " + chalk.bold.yellow(result.choiceDept) + " total budget is " +
+                chalk.bold.green("$" + JSON.parse(answerTotal)) + chalk.bold.red(" * * \n"))
                 startQ()
               });
             })
