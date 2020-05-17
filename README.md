@@ -5,10 +5,9 @@
 
 # Homework Week 12 
 ## Employee Tracker API
-*****
 16th May 2020
-
-
+*****
+<br>
 
 ### Aim
 This week we continue learning about express, inquirer and node.js but add mySQL to the mix. mySQL is a database focus program and allows us to Create, Read, Update and Detroy information. Given our past leasons and our new tools our assignment was to make an Employee Tracker API that CREATES, READS, UPDATES and DESTROYS data. This was a very big project!
