@@ -12,22 +12,21 @@
 This week we continue learning about express, inquirer and node.js but add mySQL to the mix. mySQL is a database focus program and allows us to Create, Read, Update and Detroy information. Given our past leasons and our new tools our assignment was to make an Employee Tracker API that CREATES, READS, UPDATES and DESTROYS data. This was a very big project!
 
 
-
 ### Working Project Example
 * YouTube Video https://youtu.be/JosM2APXioY
 * GITHUB repo https://github.com/Ryuku72/HomeworkW12.git
 
 
 ## Key Concepts for HomeworkW10
-> * MySQL Workbench
-> * MySQL command prompt
-> * Creating and dropping databases and tables
-> * schema.sql and seeds.sql files
-> * CRUD
-> * Primary and foreign keys
-> * Prepared statements
-> * Joins
-> * ACID
+- MySQL Workbench
+- MySQL command prompt
+- Creating and dropping databases and tables
+- schema.sql and seeds.sql files
+- CRUD
+- Primary and foreign keys
+- Prepared statements
+- Joins
+- ACID
 
  
 ## Contents
@@ -113,13 +112,14 @@ $ npm install
 $ node app.js
 ```
 
-2. Setup MySQL with seeds. Seeds are located in the `./mySQL` folder.
-
 > //Fun Stuff
 > Alternatively, open the Employee Tracker Api via app.js
 > Navigate to the option, `reset DATABASE` and select yes. This will create and populate the database for you.
 
+2. Setup MySQL with seeds. Seeds are located in the `./mySQL` folder. Copy the text from the; 
 
+- `cms.sql` Contains the database and table commands
+- `cmsSeeds` Contains the seeds for the tables 
 
 
 <a name="Usuage">
