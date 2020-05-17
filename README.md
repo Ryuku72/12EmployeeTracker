@@ -11,12 +11,12 @@
 
 ### Aim
 This week we continue learning about express, inquirer and node.js but add mySQL to the mix. mySQL is a database focus program and allows us to Create, Read, Update and Detroy information. Given our past leasons and our new tools our assignment was to make an Employee Tracker API that CREATES, READS, UPDATES and DESTROYS data. This was a very big project!
-
+<br>
 
 ### Working Project Example
 * YouTube Video https://youtu.be/JosM2APXioY
 * GITHUB repo https://github.com/Ryuku72/HomeworkW12.git
-
+<br>
 
 ## Key Concepts for HomeworkW10
 - MySQL Workbench
@@ -28,7 +28,7 @@ This week we continue learning about express, inquirer and node.js but add mySQL
 - Prepared statements
 - Joins
 - ACID
- 
+ <br>
 
 ## Contents
 * [Build Process](#Build_Process)
@@ -38,7 +38,7 @@ This week we continue learning about express, inquirer and node.js but add mySQL
 * [Usuage](#Usuage)
 * [Tests](#Tests)
 * [Additional_Information](#Additional_Information)
- 
+ <br>
 <a name="Build_Process">
 
 ## Build Process 
@@ -63,7 +63,7 @@ This week we did cover ORM's and I did attempt to break things into separate fol
 I really wanted to put more functions inside of `Logic.js` but as there were interacting functions within a number of functions insides `App.js` it became impossible to complete isolate `app.js` to only run core functions. Understanding how to better isolate function libraries will be something I will continue building upon in the future. 
 
 The last thing was to make the project pretty with `chalk`, `figlet`, and `Spinner`. 
-
+<br>
 ### Current menu options
 1. View department, employee, role - single callback function located in `logic.js'
 2. Add department, employee, role - located in `app.js`. Unable to break apart due to `startQ()` and `main()` functions and callback nesting 
@@ -72,7 +72,7 @@ The last thing was to make the project pretty with `chalk`, `figlet`, and `Spinn
 5. Reset DATABASE - `ftReset.js` Database reset
 
 > Added a reset database option because its cool! Wish it would 'console.log' slower with an animation. 
- 
+ <br>
 <a name="Project_Issues">
 
 ## Project Issues
@@ -87,7 +87,7 @@ Learning how to use mySQL and Inner joins was not too difficult. The difficult p
 There were many other issues that I fixed with stuff like `clear()` and just tricks with inquirer but filtering data was not fun. I want to move more functions to their own separate libraries. If you view `logic.js`, there are a lot of search functions that didn't get used because of callback nesting requirements or needing app.js defined functions. Whilst my intent was to use the `logic.js` library, this did fail in the end. 
  \
 Side note, I am super proud of myself for using 5 `For loops` to find out all the information within 3 mySQL calls for a single function. By just using someone's role I could figure out their salary, department and manager name with loops. This was without making a new statement within mySQL. Super proud. 
- 
+ <br>
 <a name="future">
 
 ## Future plans
@@ -100,7 +100,7 @@ Currently there are outstanding issues.
  \
 I looked into the remove function and it was a bit beyond. I didn't have enough time by this point so I left it. Over the project is pretty good.
 Project is 95% complete. 
- 
+ <br>
 <a name="Installation">
 
 ## Installation 
@@ -120,24 +120,24 @@ $ node app.js
 // FUN STUFF // \
 Alternatively, open the Employee Tracker Api via `app.js`. Navigate to the option, `reset DATABASE` and select `YES`. \
 This will create and populate the database for you. 
-
+<br>
 <a name="Usuage">
 
 ## Usuage 
 Uses a CLI database to CREATE, READ, UPDATE and DELETE employee data.
-
+<br>
 <a name="Tests">
-
 
 ## Tests
 No time to make notes :( \
 Inquirer validators have been installed to prevent mistakes 
 
-
+<br>
 <a name="Additional_Information">
 
 ## Additional Information
 Licenses: MIT
+<br>
 
 ### Resources
 * NPMJS.com
@@ -148,6 +148,7 @@ Licenses: MIT
 * Resources provided in Slack
 * Youtube tutorials
 * Dillinger.io
+<br>
 
 ### Technology
 * Node.JS
@@ -161,11 +162,11 @@ Licenses: MIT
 * CLI
 * SPINNER
 * Clear
-
-
+<br>
 
 ## Source
 Code was originally supplied in the WAUS-CRAW-FSF-PT-02-2020-U-C-MW / Week 12 / Homework repository on GitLab https://waustralia.bootcampcontent.com/the-university-of-western-australia/WAUS-CRAW-FSF-PT-02-2020-U-C-MW/tree/master/Week%2012/Homework
+<br>
 
 ### Joshua K Bader // Ryuku72 // jaybshinsen@hotmail.com
 ### Made with ReadMe.Md Generator 
