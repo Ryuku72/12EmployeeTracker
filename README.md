@@ -104,7 +104,7 @@ Project is 95% complete.
 
 ## Installation 
 1. Copy project from GitHub page. Open terminal, 
- \
+ 
 ```sh
 $ cd homeworkW12
 $ npm install
