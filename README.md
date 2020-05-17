@@ -10,7 +10,7 @@
 
 ### Aim
 This week we continue learning about express, inquirer and node.js but add mySQL to the mix. mySQL is a database focus program and allows us to Create, Read, Update and Detroy information. Given our past leasons and our new tools our assignment was to make an Employee Tracker API that CREATES, READS, UPDATES and DESTROYS data. This was a very big project!
-
+ \
 
 ### Working Project Example
 * YouTube Video https://youtu.be/JosM2APXioY
@@ -44,15 +44,15 @@ This week we continue learning about express, inquirer and node.js but add mySQL
 
 ## Build Process 
 
-The is a two sided project. First you have to think about how you are going to get information from mySQL and next you have to consider how you are going to filer that information to get the result that you wanted.\
+The is a two sided project. First you have to think about how you are going to get information from mySQL and next you have to consider how you are going to filer that information to get the result that you wanted. \
 
 I began this project by working on the `logic.js` file which contains a range of function that are intended to search or manipulate mySQL to get a result. In time some of these functions became pointless but there were leasons to be learnt. For example, how to use callbacks and why you would use callbacks over returns with async functions. There were problems here but I will cover that in issues. \
 
 Once the logic was in place I used the `Switch` function and `Inquirer` to build my question database whilst adding in validation notes where possible. The bigger issue was always: \
 1. What are the right questions to ask
 2. Can I use `for` loops to get more information via nested async callbacks
-\
-Part 2 was a massive hurdle within itself. Now that I know how to use nested callbacks to create particular arrays things became easier.\
+ \
+Part 2 was a massive hurdle within itself. Now that I know how to use nested callbacks to create particular arrays things became easier. \
 
 This week we did cover ORM's and I did attempt to break things into separate folders however, I had issues. The files/ folders were
 1. Connection: mySQl connnection
@@ -60,7 +60,7 @@ This week we did cover ORM's and I did attempt to break things into separate fol
 3. Header: Header graphic
 4. Questions: Main Inquirer Questions
 5. ftReset: Database reset
-\
+ \
 I really wanted to put more functions inside of `Logic.js` but as there were interacting functions within a number of functions insides `App.js` it became impossible to complete isolate `app.js` to only run core functions. Understanding how to better isolate function libraries will be something I will continue building upon in the future. \
 
 The last thing was to make the project pretty with `chalk`, `figlet`, and `Spinner`. \
@@ -78,22 +78,22 @@ The last thing was to make the project pretty with `chalk`, `figlet`, and `Spinn
 
 ## Project Issues
 
-Learning how to use mySQL and Inner joins was not too difficult. The difficult part was learning to use `new Promises`, `nested callbacks`, `.then statements` and anything that was connected to `async` functions. This was really hard and I had to turn to class mates to just gain a footing of how to approach my problem. Sleep has been an issue within itself but the leasons learnt was:\
+Learning how to use mySQL and Inner joins was not too difficult. The difficult part was learning to use `new Promises`, `nested callbacks`, `.then statements` and anything that was connected to `async` functions. This was really hard and I had to turn to class mates to just gain a footing of how to approach my problem. Sleep has been an issue within itself but the leasons learnt was: \
 
 1. Functions should be simple
 2. Functions should have a singular aim and sometimes using `.then` is not the right choice.
 3. Sleep and take breaks
-4. Identify when things are too hard and ask help\
+4. Identify when things are too hard and ask help \
 
-There were many other issues that I fixed with stuff like `clear()` and just tricks with inquirer but filtering data was not fun. I want to move more functions to their own separate libraries. If you view `logic.js`, there are a lot of search functions that didn't get used because of callback nesting requirements or needing app.js defined functions. Whilst my intent was to use the `logic.js` library, this did fail in the end.\
+There were many other issues that I fixed with stuff like `clear()` and just tricks with inquirer but filtering data was not fun. I want to move more functions to their own separate libraries. If you view `logic.js`, there are a lot of search functions that didn't get used because of callback nesting requirements or needing app.js defined functions. Whilst my intent was to use the `logic.js` library, this did fail in the end. \
 
-Side note, I am super proud of myself for using 5 `For loops` to find out all the information within 3 mySQL calls for a single function. By just using someone's role I could figure out their salary, department and manager name with loops. This was without making a new statement within mySQL. Super proud.\
+Side note, I am super proud of myself for using 5 `For loops` to find out all the information within 3 mySQL calls for a single function. By just using someone's role I could figure out their salary, department and manager name with loops. This was without making a new statement within mySQL. Super proud. \
 
 <a name="future">
 
 ## Future plans
 
-Currently there are outstanding issues.\
+Currently there are outstanding issues. \
 
 1. Update Employee Role
 2. Update Manager Role
@@ -120,7 +120,7 @@ $ node app.js
 
 // FUN STUFF // \
 Alternatively, open the Employee Tracker Api via `app.js`. Navigate to the option, `reset DATABASE` and select `YES`. \
-This will create and populate the database for you.\
+This will create and populate the database for you. \
 
 <a name="Usuage">
 
