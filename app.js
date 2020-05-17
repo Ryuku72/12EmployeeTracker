@@ -236,11 +236,11 @@ const addRole = async function () {
           {
             name: "roleSalary",
             type: "input",
-            message: "What is the salary of the new role? (Maximum 8 figures",
+            message: "What is the salary of the new role? (Maximum 6 figures)",
             validate: function (name) {
-              const reg = /^\d+$/;
-              if ((name.length) > 7 || reg.test(!name)) {
-                return "Please enter CORRECT answer. Numbers ONLY and MAX 8 characters";
+              const reg = /^\D+$/;
+              if ((name.length) > 6 || reg.test(name)) {
+                return "Please enter CORRECT answer. Numbers ONLY and MAX 6 characters";
               }
               return true
             }
@@ -642,11 +642,11 @@ function updateRole() {
         {
           name: "newSalary",
           type: "input",
-          message: "What is the new salary for this role? Max. 8 figures",
+          message: "What is the new salary for this role? Max. 6 figures",
           validate: function (name) {
-            const reg = /^\d+$/;
-            if ((name.length) > 7 || reg.test(name)) {
-              return "Please enter CORRECT answer. Numbers ONLY and MAX 8 characters";
+            const reg = /^\D+$/;
+              if ((name.length) > 6 || reg.test(name)) {
+              return "Please enter CORRECT answer. Numbers ONLY and MAX 6 characters";
             }
             return true
           }
