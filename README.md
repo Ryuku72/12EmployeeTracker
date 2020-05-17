@@ -62,11 +62,18 @@ This week we did cover ORM's and I did attempt to break things into separate fol
 4. Questions: Main Inquirer Questions
 5. ftReset: Database reset
 
-I really wanted to put more functions inside of Logic but as there were interactions insides `App.js` it became impossible e.g. `main()` function calls. 
+I really wanted to put more functions inside of `Logic.js` but as there were interacting functions within a number of functions insides `App.js` it became impossible to complete isolate `app.js` to only run core functions. Understanding how to better isolate function libraries will be something I will continue building upon in the future. 
 
 The last thing was to make the project pretty with `chalk`, `figlet`, and `Spinner`. 
 
-Added a reset database option because its cool! Wish it would 'console.log' slower but hey...
+### Current menu options
+1. View department, employee, role - single callback function located in `logic.js'
+2. Add department, employee, role - located in `app.js`. Unable to break apart due to `startQ()` and `main()` functions and callback nesting 
+3. Remove department, employee, role - located in '`app.js` for the same reasons as ADD
+4. Update Role - located in `app.js` and unable to use the `logic.js` library.
+5. Reset DATABASE - `ftReset.js` Database reset
+
+> Added a reset database option because its cool! Wish it would 'console.log' slower with an animation. 
 
 <a name="Project_Issues">
 
@@ -78,9 +85,9 @@ Learning how to use mySQL and Inner joins was not too difficult. The difficult p
 3. Sleep and take breaks
 4. Identify when things are too hard and ask help
 
-There were many other issues that I fixed with stuff like `clear()` and just tricks with inquirer but filtering data was not fun.
+There were many other issues that I fixed with stuff like `clear()` and just tricks with inquirer but filtering data was not fun. I want to move more functions to their own separate libraries. If you view `logic.js`, there are a lot of search functions that didn't get used because of callback nesting requirements or needing app.js defined functions. Whilst my intent was to use the `logic.js` library, this did fail in the end.
 
-Side note, I am super proud of myself for using 5 for loops to find out all the information within 3 mySQL calls for a single function. By just using someone's role I could figure out their salary, department and manager name with loops. This was without making a new statement within mySQL. Super proud.
+Side note, I am super proud of myself for using 5 `For loops` to find out all the information within 3 mySQL calls for a single function. By just using someone's role I could figure out their salary, department and manager name with loops. This was without making a new statement within mySQL. Super proud.
 
 <a name="future">
 
@@ -108,9 +115,9 @@ $ node app.js
 
 2. Setup MySQL with seeds. Seeds are located in the `./mySQL` folder.
 
-// Fun Stuff
-Alternatively, open the Employee Tracker Api via app.js
-Navigate to the option, `reset DATABASE` and select yes. This will create and populate the database for you.
+> //Fun Stuff
+> Alternatively, open the Employee Tracker Api via app.js
+> Navigate to the option, `reset DATABASE` and select yes. This will create and populate the database for you.
 
 
 
@@ -118,7 +125,7 @@ Navigate to the option, `reset DATABASE` and select yes. This will create and po
 <a name="Usuage">
 
 ## Usuage 
-Uses a database of employees, roles and departments to track salaries and staff movement.
+Uses a CLI database to CREATE, READ, UPDATE and DELETE employee data.
 
 <a name="Tests">
 
@@ -138,23 +145,23 @@ Licenses: MIT
 * W3 Schools
 * Medium
 * Developer.mozilla.org
-* Getbootstrap.com
 * Stackoverflow.com
 * Resources provided in Slack
 * Youtube tutorials
 * Dillinger.io
 
-
 ### Technology
-* HyperText Markup Language
-* Cascading Style Sheets
 * Node.JS
+* Javascript
 * Inquirer
 * Visual Studio Code
 * GitHub
 * Google Chrome
 * mySQL
 * Chalk
+* CLI
+* SPINNER
+* Clear
 
 
 
