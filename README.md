@@ -27,7 +27,7 @@ This week we continue learning about express, inquirer and node.js but add mySQL
 - Prepared statements
 - Joins
 - ACID
- \
+ 
 
 ## Contents
 * [Build Process](#Build_Process)
@@ -37,7 +37,7 @@ This week we continue learning about express, inquirer and node.js but add mySQL
 * [Usuage](#Usuage)
 * [Tests](#Tests)
 * [Additional_Information](#Additional_Information)
- \
+ 
 <a name="Build_Process">
 
 ## Build Process 
@@ -51,7 +51,7 @@ Once the logic was in place I used the `Switch` function and `Inquirer` to build
 2. Can I use `for` loops to get more information via nested async callbacks
  
 Part 2 was a massive hurdle within itself. Now that I know how to use nested callbacks to create particular arrays things became easier. 
- \ 
+  
 This week we did cover ORM's and I did attempt to break things into separate folders however, I had issues. The files/ folders were
 1. Connection: mySQl connnection
 2. Logic: main functions
@@ -71,7 +71,7 @@ The last thing was to make the project pretty with `chalk`, `figlet`, and `Spinn
 5. Reset DATABASE - `ftReset.js` Database reset
 
 > Added a reset database option because its cool! Wish it would 'console.log' slower with an animation. 
- \
+ 
 <a name="Project_Issues">
 
 ## Project Issues
@@ -86,7 +86,7 @@ Learning how to use mySQL and Inner joins was not too difficult. The difficult p
 There were many other issues that I fixed with stuff like `clear()` and just tricks with inquirer but filtering data was not fun. I want to move more functions to their own separate libraries. If you view `logic.js`, there are a lot of search functions that didn't get used because of callback nesting requirements or needing app.js defined functions. Whilst my intent was to use the `logic.js` library, this did fail in the end. 
  \
 Side note, I am super proud of myself for using 5 `For loops` to find out all the information within 3 mySQL calls for a single function. By just using someone's role I could figure out their salary, department and manager name with loops. This was without making a new statement within mySQL. Super proud. 
- \
+ 
 <a name="future">
 
 ## Future plans
@@ -99,7 +99,7 @@ Currently there are outstanding issues.
  \
 I looked into the remove function and it was a bit beyond. I didn't have enough time by this point so I left it. Over the project is pretty good.
 Project is 95% complete. 
- \
+ 
 <a name="Installation">
 
 ## Installation 
@@ -111,7 +111,7 @@ $ npm install
 $ node app.js
 ```
  \
-2. Setup MySQL with seeds. Seeds are located in the `./mySQL` folder. Copy the text from the;\ 
+2. Setup MySQL with seeds. Seeds are located in the `./mySQL` folder. Copy the text from the;
 
 - `cms.sql` Contains the database and table commands
 - `cmsSeeds` Contains the seeds for the tables 
