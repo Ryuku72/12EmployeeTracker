@@ -38,7 +38,7 @@ This week we continue learning about express, inquirer and node.js but add mySQL
 * [Additional_Information](#Additional_Information)
  <br>
 <a name="Build_Process">
-*****
+
 ## Build Process 
 
 The is a two sided project. First you have to think about how you are going to get information from mySQL and next you have to consider how you are going to filer that information to get the result that you wanted. 
@@ -72,7 +72,7 @@ The last thing was to make the project pretty with `chalk`, `figlet`, and `Spinn
 > Added a reset database option because its cool! Wish it would 'console.log' slower with an animation. 
  <br>
 <a name="Project_Issues">
-*****
+
 ## Project Issues
 
 Learning how to use mySQL and Inner joins was not too difficult. The difficult part was learning to use `new Promises`, `nested callbacks`, `.then statements` and anything that was connected to `async` functions. This was really hard and I had to turn to class mates to just gain a footing of how to approach my problem. Sleep has been an issue within itself but the leasons learnt was: 
@@ -87,7 +87,7 @@ There were many other issues that I fixed with stuff like `clear()` and just tri
 Side note, I am super proud of myself for using 5 `For loops` to find out all the information within 3 mySQL calls for a single function. By just using someone's role I could figure out their salary, department and manager name with loops. This was without making a new statement within mySQL. Super proud. 
  <br>
 <a name="future">
-*****
+
 ## Future plans
 
 Currently there are outstanding issues. 
@@ -100,7 +100,7 @@ I looked into the remove function and it was a bit beyond. I didn't have enough 
 Project is 95% complete. 
  <br>
 <a name="Installation">
-*****
+
 ## Installation 
 1. Copy project from GitHub page. Open terminal, 
  
@@ -132,7 +132,7 @@ Inquirer validators have been installed to prevent mistakes
 
 <br>
 <a name="Additional_Information">
-*****
+
 ## Additional Information
 Licenses: MIT
 <br>
