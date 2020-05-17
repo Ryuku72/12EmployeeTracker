@@ -240,7 +240,7 @@ const addRole = async function () {
             validate: function (name) {
               const reg = /^\d+$/;
               if ((name.length) > 7 || reg.test(!name)) {
-                return "Please enter CORRECT answer. BLANK and LETTERS are not correct answers";
+                return "Please enter CORRECT answer. Numbers ONLY and MAX 8 characters";
               }
               return true
             }
@@ -646,7 +646,7 @@ function updateRole() {
           validate: function (name) {
             const reg = /^\d+$/;
             if ((name.length) > 7 || reg.test(name)) {
-              return "Please enter CORRECT answer. BLANK and NUMBERS are not correct answers";
+              return "Please enter CORRECT answer. Numbers ONLY and MAX 8 characters";
             }
             return true
           }

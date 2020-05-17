@@ -106,11 +106,11 @@ $ npm install
 $ node app.js
 ```
 
-2. Setup MySQL with seeds. Seeds are located in the './mySQL' folder.
+2. Setup MySQL with seeds. Seeds are located in the `./mySQL` folder.
 
 // Fun Stuff
 Alternatively, open the Employee Tracker Api via app.js
-Navigate to the option, 'reset DATABASE' and select yes. This will create and populate the database for you.
+Navigate to the option, `reset DATABASE` and select yes. This will create and populate the database for you.
 
 
 
@@ -125,6 +125,7 @@ Uses a database of employees, roles and departments to track salaries and staff 
 
 ## Tests
 No time to make notes :(
+Inquirer validators have been installed to prevent mistakes
 
 
 <a name="Additional_Information">
