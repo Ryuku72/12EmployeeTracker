@@ -15,7 +15,7 @@ This week we continue learning about express, inquirer and node.js but add mySQL
 
 ### Working Project Example
 * YouTube Video https://youtu.be/JosM2APXioY
-* GITHUB repo https://github.com/Ryuku72/HomeworkW12
+* GITHUB repo https://github.com/Ryuku72/HomeworkW12.git
 
 
 ## Key Concepts for HomeworkW10
