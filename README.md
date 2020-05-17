@@ -112,15 +112,16 @@ $ npm install
 $ node app.js
 ```
 
-> //Fun Stuff
-> Alternatively, open the Employee Tracker Api via app.js
-> Navigate to the option, `reset DATABASE` and select yes. This will create and populate the database for you.
+
 
 2. Setup MySQL with seeds. Seeds are located in the `./mySQL` folder. Copy the text from the; 
 
 - `cms.sql` Contains the database and table commands
 - `cmsSeeds` Contains the seeds for the tables 
 
+> * FUN STUFF
+> Alternatively, open the Employee Tracker Api via `app.js`. Navigate to the option, `reset DATABASE` and select `YES`. 
+> This will create and populate the database for you.
 
 <a name="Usuage">
 
