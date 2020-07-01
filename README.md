@@ -1,21 +1,24 @@
-![GitHub last commit](https://img.shields.io/github/last-commit/Ryuku72/HomeworkW12?style=for-the-badge)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/Ryuku72/HomeworkW12?style=for-the-badge)
-![GitHub contributors](https://img.shields.io/github/contributors/Ryuku72/HomeworkW12?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/Ryuku72/12EmployeeTracker?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/Ryuku72/12EmployeeTracker?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/Ryuku72/12EmployeeTracker?style=for-the-badge)
 
-
-# Homework Week 12 
-## Employee Tracker API
-16th May 2020
+# Employee Tracker
+__PROJECT12: 16TH MAY 2020__
 *****
 
-### Aim
+## Aim
 This week we continue learning about express, inquirer and node.js but add mySQL to the mix. mySQL is a database focus program and allows us to Create, Read, Update and Detroy information. Given our past leasons and our new tools our assignment was to make an Employee Tracker API that CREATES, READS, UPDATES and DESTROYS data. This was a very big project!
-<br>
 
 ### Working Project Example
 * YouTube Video https://youtu.be/JosM2APXioY
 * GITHUB repo https://github.com/Ryuku72/HomeworkW12.git
 <br>
+
+### Business Logic
+As a business owner
+I want to be able to view and manage the departments, roles, and employees in my company
+So that I can organize and plan my business
+
 
 ## Key Concepts for HomeworkW10
 - MySQL Workbench
