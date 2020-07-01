@@ -12,13 +12,12 @@ This week we continue learning about express, inquirer and node.js but add mySQL
 ### Working Project Example
 * YouTube Video https://youtu.be/JosM2APXioY
 * GITHUB repo https://github.com/Ryuku72/HomeworkW12.git
-<br>
 
 ### Business Logic
 As a business owner
 I want to be able to view and manage the departments, roles, and employees in my company
 So that I can organize and plan my business
-
+<br>
 
 ## Key Concepts for HomeworkW10
 - MySQL Workbench
